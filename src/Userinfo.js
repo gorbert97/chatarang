@@ -2,7 +2,9 @@ import React from 'react'
 
 const UserInfo = (props) => {
     return (
-        <div className="UserInfo" style={{...props.style, ...styles.info}}>
+        <div className="UserInfo"
+         style={{...props.style,
+          ...styles.info}}>
             <div className="Avatar" style={styles.avatar}></div>
             <div className="user" style={styles.user}>{props.userName}</div>
             <a href="#" style={styles.a}>

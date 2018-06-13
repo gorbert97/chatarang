@@ -3,7 +3,7 @@ import React from 'react'
 
 const Roomlist = (props) => {
     return (
-        <nav className="Roomlist" >
+        <nav className="Roomlist" style ={props.style}>
                 <h2 style={styles.h2}>rooms</h2>
                 <ul style={styles.ul}>
                 <li style={styles.li}>General<a href="#" style={styles.a}>{props.room1}</a></li>
@@ -26,6 +26,11 @@ const styles= {
   li: {
     marginBottom: '0.5rem',
   },
+  a: {
+    display: 'block',
+    color: 'whitesmoke',
+    textDecoration: 'none',
+},
   
 }
 

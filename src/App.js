@@ -2,19 +2,25 @@ import React, { Component } from 'react'
 
 import './App.css'
 import Main from './Main'
+import Login from './Login';
 
 class App extends Component {
   state = {
     user: {
-      uid: '76547',
+      uid: '',
       userName: 'maggie',
     },
   }
 
   render() {
+    let loggedIn = true
+
+    if(this.state.user.userName == ''){
+      loggedIn = false
+    }
     return (
       <div className="App">
-        <Main user={this.state.user} />
+        {loggedIn ? <Main user={this.state.user} /> : <Login />}
       </div>
     )
   }

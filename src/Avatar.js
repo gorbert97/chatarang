@@ -3,7 +3,6 @@ import React from 'react'
 const Avatar = (props) => {
     return (
         <div classList="Avatar" style={styles}>
-        
         </div>
     )
 }
