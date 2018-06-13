@@ -21,6 +21,9 @@ class MessageForm extends Component {
         onSubmit={this.handleSubmit}
         style={styles.messageForm}
       >
+      <div class="chatIcon" style={styles.icon}>
+        <i class="fas fa-comment-alt"></i>
+      </div>
         <input
           type="text"
           name="body"
@@ -33,6 +36,7 @@ class MessageForm extends Component {
         type="submit"
         style={styles.button}
         >Send</button>
+        <i class="far fa-paper-plane" title="Send"></i>
       </form>
     )
   }

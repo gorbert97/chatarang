@@ -1,8 +1,10 @@
 import React from 'react'
+import Avatar from './Avatar';
 
 const Message = (props) => {
   return (
     <div className="Message" style={styles.message}>
+     <Avatar />
       {props.message.userName}: {props.message.body}
     </div>
   )
