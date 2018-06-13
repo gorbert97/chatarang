@@ -8,7 +8,7 @@ class App extends Component {
     user: {
       uid: '76547',
       userName: 'maggie',
-    }
+    },
   }
 
   render() {
