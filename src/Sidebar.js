@@ -1,5 +1,6 @@
 import React from 'react'
 import Roomlist from './Roomlist'
+import UserInfo from './Userinfo'
 
 const Sidebar = (props) => {
   return (
@@ -7,18 +8,7 @@ const Sidebar = (props) => {
       className="Sidebar"
       style={styles.sidebar}
     >
-      <div
-        className="UserInfo"
-        style={styles.children}
-      >
-        <div className="Avatar"></div>
-        <div className="user">
-          {props.user.userName}
-        </div>
-        <a href="#">
-          <i className="fas fa-sign-out-alt"></i>
-        </a>
-      </div>
+      <UserInfo userName={props.user.userName} style={styles.children}/>
       <h1
         style={{
           ...styles.children,
