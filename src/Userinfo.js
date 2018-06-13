@@ -4,7 +4,7 @@ const UserInfo = (props) => {
     return (
         <div className="UserInfo"
          style={{...props.style,
-          ...styles.info}}>
+          ...styles.Userinfo}}>
             <div className="Avatar" style={styles.avatar}></div>
             <div className="user" style={styles.user}>{props.userName}</div>
             <a href="#" style={styles.a}>
@@ -21,7 +21,7 @@ UserInfo: {
     display: 'flex',
     alignItems: 'center',
   },
-  Avatar: {
+  avatar: {
     marginRight: '0.5rem',
   },
   user: {

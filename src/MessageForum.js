@@ -35,8 +35,9 @@ class MessageForm extends Component {
         <button 
         type="submit"
         style={styles.button}
-        >Send</button>
+        >
         <i class="far fa-paper-plane" title="Send"></i>
+        </button>
       </form>
     )
   }
@@ -68,10 +69,6 @@ const styles = {
     flex: 1,
   fontSize: '1.2rem',
   border: 0,
-  },
-
-  focus:{
-    outline:0,
   },
   button:{
     fontSize: '1.5rem',
