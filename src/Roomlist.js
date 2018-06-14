@@ -1,21 +1,27 @@
 
 import React from 'react'
-import {styleSheet, css} from 'aphrodite'
+import {StyleSheet, css } from 'aphrodite'
 
 
 const Roomlist = (props) => {
     return (
-        <nav className="Roomlist" style ={props.style}>
-                <h2 style={styles.h2}>rooms</h2>
-                <ul style={styles.ul}>
-                <li style={styles.li}>General<a href="#" style={styles.a}>{props.room1}</a></li>
-                <li style={styles.li}>Sweaty-Basement-Dwellers<a href="#" style={styles.a}>{props.room2}</a></li>
+        <nav className={`RoomList ${css(styles.nav)}`}>
+                <h2  className={css(styles.h2)}>rooms</h2>
+                <ul className={css(styles.ul)}>
+                {props.channels.map(channel => 
+                <li className={css(styles.li)}>General
+                <a href='#' onClick={ () => props.changeChannel(channel)} className={css(styles.a)}>{channel}</a>
+                </li>)}
                 </ul>
+                 <button onClick={ () => props.addChannel('test')} className={css(styles.button)}>Add Room</button> 
         </nav>
     )
 }
 const styles= {
- h2: {
+  nav: {
+    padding: '0 1rem',
+  },
+  h2: {
     fontSize: '1rem',
   },
   
@@ -32,6 +38,31 @@ const styles= {
     display: 'block',
     color: 'whitesmoke',
     textDecoration: 'none',
+
+    '::before': {
+      content: '"# "',
+    },
+
+    ':hover': {
+      backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    }
+},
+
+button: {
+  fontSize: '1.5rem',
+  backgroundColor: '#1A8FE3',
+  color: 'white',
+  paddingLeft: '1rem',
+  paddingRight: '1rem',
+  borderTopRightRadius: '0.5rem',
+  borderBottomRightRadius: '0.5rem',
+  borderTopLeftRadius: '0.5rem',
+  borderBottomLeftRadius: '0.5rem',
+  border: '1px solid white',
+
+  ':hover': {
+    cursor: 'pointer',
+  },
 },
   
 }

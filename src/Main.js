@@ -22,6 +22,11 @@ class Main extends Component {
   addChannel = (channel) => {
     const channels = [...this.state.channels]
     channels.push(channel)
+    base.syncState(`${channel}/messages`, {
+            context: this,
+            state: 'messages',
+            asArray: true,
+          })
     this.setState(channels)
   }
 

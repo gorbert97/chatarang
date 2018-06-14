@@ -8,13 +8,13 @@ const Sidebar = (props) => {
       className="Sidebar"
       style={styles.sidebar}
     >
-      <UserInfo userName={props.user.userName} style={styles.children}/>
+      <UserInfo user={props.user} style={styles.children} signOut={props.signOut}/>
       <h1
         style={styles.h1}
       >
         XTBC 18
       </h1>
-      <Roomlist/>
+      <Roomlist channels={props.channels} changeChannel={props.changeChannel} addChannel={props.addChannel} />
     </aside>
   )
 }
