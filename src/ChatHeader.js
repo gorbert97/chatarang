@@ -13,7 +13,7 @@ const ChatHeader = () => {
 
 const styles = {
   chatHeader: {
-    backgroundColor: 'f3f3f3',
+    backgroundColor: '#f3f3f3',
     borderBottom: '1px solid #ccc',
     height: '3rem',
     padding: '0 1rem',

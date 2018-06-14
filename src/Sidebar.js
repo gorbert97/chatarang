@@ -10,14 +10,11 @@ const Sidebar = (props) => {
     >
       <UserInfo userName={props.user.userName} style={styles.children}/>
       <h1
-        style={{
-          ...styles.children,
-          ...styles.h1,
-        }}
+        style={styles.h1}
       >
         XTBC 18
       </h1>
-      <Roomlist style={styles.children} />
+      <Roomlist/>
     </aside>
   )
 }
@@ -32,14 +29,11 @@ const styles = {
     flexDirection: 'column',
   },
 
-  children: {
-    padding: '0 1rem',
-  },
-
   h1: {
     color: 'white',
     fontSize: '1.2rem',
     marginTop: 0,
+    padding: '0 1rem',
   },
 }
 

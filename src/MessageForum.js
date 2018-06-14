@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {styleSheet, css} from 'aphrodite'
 
 class MessageForm extends Component {
   state = {
@@ -8,6 +9,7 @@ class MessageForm extends Component {
   handleSubmit = (ev) => {
     ev.preventDefault()
     this.props.addMessage(this.state.body)
+    this.setState({body:''})
   }
 
   handleChange = (ev) => {
@@ -17,9 +19,8 @@ class MessageForm extends Component {
   render() {
     return (
       <form
-        className="MessageForm"
+        className={`MessageForm ${css(styles.form)}`}
         onSubmit={this.handleSubmit}
-        style={styles.messageForm}
       >
       <div class="chatIcon" style={styles.chatIcon}>
         <i class="fas fa-comment-alt"></i>
@@ -31,6 +32,7 @@ class MessageForm extends Component {
           value={this.state.body}
           onChange={this.handleChange}
           style={styles.input}
+          autoFocus
         />
         <button 
         type="submit"
