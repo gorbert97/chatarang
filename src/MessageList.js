@@ -6,8 +6,8 @@ const MessageList = (props) => {
   return (
     <div className="MessageList" style={styles.messageList} >
     <div class="roomAnnouncement" style={styles.roomAnouncement}>
-        <h3 style={styles.h3}>#general</h3>
-        <p>This is the very beginning of the #general room.</p>
+        <h3 style={styles.h3}>#{props.currentChannel}</h3>
+        <p>This is the very beginning of the #{props.currentChannel} room.</p>
       </div>
       {
         props.messages.map(msg => <Message key={msg.id} message={msg} />)
