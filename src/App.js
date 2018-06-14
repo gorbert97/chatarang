@@ -32,7 +32,7 @@ class App extends Component {
       {
         this.signedIn()
       ?<Main user={this.state.user} />
-      :<Login Login={this.handleAuth}/>
+      :<Login handleAuth={this.handleAuth}/>
         }
       </div>
     )
