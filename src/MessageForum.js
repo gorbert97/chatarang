@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {styleSheet, css} from 'aphrodite'
+import { StyleSheet, css } from 'aphrodite'
 
 class MessageForm extends Component {
   state = {
@@ -9,7 +9,7 @@ class MessageForm extends Component {
   handleSubmit = (ev) => {
     ev.preventDefault()
     this.props.addMessage(this.state.body)
-    this.setState({body:''})
+    this.setState({ body: '' })
   }
 
   handleChange = (ev) => {
@@ -22,31 +22,26 @@ class MessageForm extends Component {
         className={`MessageForm ${css(styles.form)}`}
         onSubmit={this.handleSubmit}
       >
-      <div class="chatIcon" style={styles.chatIcon}>
-        <i class="fas fa-comment-alt"></i>
-      </div>
+        <div className={css(styles.icon)}>
+          <i className="fas fa-comment-alt"></i>
+        </div>
         <input
           type="text"
           name="body"
           placeholder="Type a message..."
+          autoFocus
           value={this.state.body}
           onChange={this.handleChange}
-          style={styles.input}
-          autoFocus
+          className={css(styles.input)}
         />
-        <button 
-        type="submit"
-        style={styles.button}
-        >
-        <i class="far fa-paper-plane" title="Send"></i>
-        </button>
+        <button type="submit" className={css(styles.button)}>Send</button>
       </form>
     )
   }
 }
 
-const styles = {
-  messageForm: {
+const styles = StyleSheet.create({
+  form: {
     backgroundColor: 'white',
     height: '3rem',
     display: 'flex',
@@ -57,7 +52,7 @@ const styles = {
     padding: 0,
   },
 
-  chatIcon: {
+  icon: {
     display: 'flex',
     borderRadius: '0.5rem',
     alignItems: 'center',
@@ -67,12 +62,17 @@ const styles = {
     fontSize: '1.2rem',
   },
 
-  input:{
+  input: {
     flex: 1,
-  fontSize: '1.2rem',
-  border: 0,
+    fontSize: '1.2rem',
+    border: 0,
+
+    ':focus': {
+      outline: 0,
+    },
   },
-  button:{
+
+  button: {
     fontSize: '1.5rem',
     backgroundColor: '#1A8FE3',
     color: 'white',
@@ -82,6 +82,6 @@ const styles = {
     borderBottomRightRadius: '0.5rem',
     border: '1px solid white',
   },
-}
+})
 
 export default MessageForm

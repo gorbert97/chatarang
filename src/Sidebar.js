@@ -1,20 +1,20 @@
 import React from 'react'
-import Roomlist from './Roomlist'
-import UserInfo from './Userinfo'
 
-const Sidebar = (props) => {
+import Userinfo from './Userinfo'
+import Roomlist from './Roomlist'
+
+const Sidebar = ({ user, signOut, loadRoom }) => {
   return (
     <aside
       className="Sidebar"
       style={styles.sidebar}
     >
-      <UserInfo user={props.user} style={styles.children} signOut={props.signOut}/>
-      <h1
-        style={styles.h1}
-      >
-        XTBC 18
-      </h1>
-      <Roomlist channels={props.channels} changeChannel={props.changeChannel} addChannel={props.addChannel} />
+      <Userinfo
+        user={user}
+        signOut={signOut}
+      />
+      <h1 style={styles.h1}>XTBC 18</h1>
+      <Roomlist loadRoom={loadRoom} />
     </aside>
   )
 }
