@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, css } from 'aphrodite'
 
-import { auth, googleProvider } from './base'
+import { auth, googleProvider, gitHubProvider } from './base'
 
 class SignIn extends Component {
   state = {
@@ -17,8 +17,12 @@ class SignIn extends Component {
     // do something?
   }
 
-  authenticate = () => {
-    auth.signInWithPopup(googleProvider)
+  authenticate = (ev) => {
+    if (ev.target.id === 'google'){
+      auth.signInWithPopup(googleProvider)
+    }else if (ev.target.id === 'github') {
+      auth.signInWithPopup(gitHubProvider)
+    }
   }
 
   render() {
@@ -36,28 +40,22 @@ class SignIn extends Component {
             onSubmit={this.handleSubmit}
           >
             <h1>Welcome!</h1>
-            {/* <label htmlFor="email" className={css(styles.label)}>
-              Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              className={css(styles.input)}
-              onChange={this.handleChange}
-              autoFocus
-            />
-            <button type="submit" className={css(styles.button)}>
-              Sign In
-            </button>
-            <div>or</div> */}
-
             <button
               type="button"
               className={css(styles.button)}
               onClick={this.authenticate}
+              id="google"
             >
               <i className={`fab fa-google ${css(styles.brandIcon)}`}></i>
               Sign in with Google
+            </button>
+            <button
+              type="button"
+              className={css(styles.button)}
+              onClick={this.authenticate}
+              id="github"
+            >
+              Sign in with GitHub
             </button>
           </form>
 
